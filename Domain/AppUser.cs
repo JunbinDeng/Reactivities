@@ -5,6 +5,7 @@ namespace Domain
     public class AppUser : IdentityUser
     {
         public required string DisplayName { get; set; }
-        public int Bio { get; set; }
+        public string? Bio { get; set; }
+        public ICollection<ActivityAttendee>? Activities { get; set; }
     }
 }
