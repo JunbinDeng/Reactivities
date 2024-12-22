@@ -43,7 +43,9 @@ export default observer(function ActivityDetailedSidebar({
                     {attendees.displayName}
                   </Link>
                 </Item.Header>
-                <Item.Extra style={{ color: 'orange' }}>Following</Item.Extra>
+                {attendees.following && (
+                  <Item.Extra style={{ color: 'orange' }}>Following</Item.Extra>
+                )}
               </Item.Content>
             </Item>
           ))}
