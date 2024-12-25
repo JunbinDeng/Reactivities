@@ -1,0 +1,26 @@
+# fly.toml app configuration file generated for reactivities-showcase on 2024-12-25T22:06:16+13:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'reactivities-showcase'
+primary_region = 'syd'
+
+[build]
+  image = 'bigjamie/reactivities:latest'
+
+[env]
+  ASPNETCORE_URLS="http://+:8080"
+  Cloudinary__CloudName="dihte9eek"
+  Cloudinary__ApiKey="436224186779696"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  size = 'shared-cpu-1x'
