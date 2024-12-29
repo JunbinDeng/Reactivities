@@ -15,7 +15,6 @@ namespace API.Extenstions
                 totalPages
             };
             response.Headers.Add("Pagination", JsonSerializer.Serialize(pageinationHeader));
-            response.Headers.Add("Access-Control-Expose-Headers", "Pagination");
         }
     }
 }
