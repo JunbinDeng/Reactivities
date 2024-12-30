@@ -13,6 +13,7 @@ primary_region = 'syd'
   ASPNETCORE_URLS="http://+:8080"
   Cloudinary__CloudName="dihte9eek"
   Cloudinary__ApiKey="436224186779696"
+  Sendgrid__User="unified_acct_USf4491fcfb23475fabe50c461bb006760"
 
 [http_service]
   internal_port = 8080

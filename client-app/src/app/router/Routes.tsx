@@ -10,6 +10,8 @@ import ServerError from '../../features/errors/ServerError';
 import LoginForm from '../../features/users/LoginForm';
 import ProfilePage from '../../features/profiles/ProfilePage';
 import RequireAuth from './RequireAuth';
+import RegisterSuccess from '../../features/users/RegisterSuccess';
+import ConfirmEmail from '../../features/profiles/ConfirmEmail';
 
 export const routers: RouteObject[] = [
   {
@@ -31,6 +33,8 @@ export const routers: RouteObject[] = [
       },
       { path: 'not-found', element: <NotFound /> },
       { path: 'server-error', element: <ServerError /> },
+      { path: 'account/registerSuccess', element: <RegisterSuccess /> },
+      { path: 'account/verifyEmail', element: <ConfirmEmail /> },
       { path: '*', element: <Navigate replace to='/not-found' /> },
     ],
   },

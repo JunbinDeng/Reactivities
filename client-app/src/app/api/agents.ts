@@ -56,8 +56,6 @@ axios.interceptors.response.use(
         ) {
           store.userStore.logout();
           toast.error('Session expired - please login again');
-        } else {
-          toast.error('unauthorised');
         }
         break;
       case 403:
@@ -112,6 +110,13 @@ const Account = {
   register: (user: UserFormValues) =>
     requests.post<User>('/account/register', user),
   refreshToken: () => requests.post<User>('/account/refreshToken', {}),
+  verifyEmail: (token: string, email: string) =>
+    requests.post<void>(
+      `/account/verifyEmail?token=${token}&email=${email}`,
+      {}
+    ),
+  resendEmailConfirm: (email: string) =>
+    requests.get(`/account/resendEmailConfirmationLink?email=${email}`),
 };
 
 const Profiles = {
